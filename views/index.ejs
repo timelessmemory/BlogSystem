@@ -1,0 +1,31 @@
+<style>
+    .form-signin{background-color:#eeeeee;margin-left:0px;}
+</style>
+
+<div class="container">
+
+    <div class="hero-unit">
+        <h1>Hello, <%=title%>!</h1>
+        <p>欢迎来到微博，在这里你可以发表自己的博客和品读他人的博客，祝您愉快!!</p>
+        <%if(flag==false){%>
+        <p><a href="/login" class="btn btn-primary btn-large">登录&raquo;</a></p>
+        <p><a href="/register" class="btn btn-primary btn-large">注册&raquo;</a></p>
+        <%}else {%>
+        <form class="form-signin" action="/otherBlog" method="post">
+            <p><input type="text" class="input-block-level" placeholder="请输入您要搜索的博主" name="othername"/>
+                <button class="btn btn-large btn-primary" type="submit">搜索</button>
+            </p>
+        </form>
+        <p><a href="/blog" class="btn btn-primary btn-large">写博客&raquo;</a></p>
+        <%}%>
+    </div>
+
+    <%if(blogs!=undefined&&blogs.length){%>
+    <div class="row">
+        <%-partial('otherlistitem',blogs) %>
+    </div>
+    <%}else{%>
+    <div class="hero-unit">当前还没有人发表博客哦，快来登录发表第一篇博客吧！</div>
+    <%}%>
+
+</div> <!-- /container -->

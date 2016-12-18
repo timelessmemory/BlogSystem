@@ -1,0 +1,26 @@
+<style>
+    .form-signin{max-width:850px;}
+    .sbutton{float:right;}
+</style>
+
+<div class="container">
+
+    <form class="form-signin" action="/updateblog" method="post">
+        <%if(error!=undefined&&error){%>
+        <h2 style="color:red;"><%=error%></h2>
+        <%}%>
+        <h2 class="form-signin-heading">标题</h2>
+        <input type="hidden" name="id" value=<%=blogid%>>
+        <input type="text" class="input-block-level" placeholder="标题"
+               name="title" <%if(blogtitle!=undefined&&blogtitle){%>value=<%=blogtitle%><%}%> />
+        <h2 class="form-signin-heading">博客内容</h2>
+        <textarea
+                class="input-block-level"
+                placeholder="博客内容"
+                name="content"
+                style="height:200px;resize:none;"><%if(blogcontent!=undefined&&blogcontent){%><%=blogcontent%><%}%></textarea>
+        <input class="btn btn-large btn-primary"  type="reset" value="回复到初始内容"/>
+        <button class="btn btn-large btn-primary sbutton"  type="submit">提交</button>
+    </form>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="span4">
+    <p>博主:<%=listitem.user%></p>
+    <p>发表时间:<%=listitem.subDate%></p>
+    <p>文章名:<%=listitem.title%></p>
+    <p><%=listitem.contents%></p>
+    <p>
+        <a href="/deleteBlog/<%=listitem._id%>" class="btn btn-primary btn-large">删除&raquo;</a>
+        <a href="/updateBlog/<%=listitem._id%>" class="btn btn-primary btn-large">编辑&raquo;</a>
+    </p>
+</div>

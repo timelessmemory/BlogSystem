@@ -1,0 +1,16 @@
+<div class="container">
+
+    <div class="hero-unit">
+        <h1>Hello, <%=title%>!</h1>
+        <p>欢迎来到微博，以下是您的博客文章，祝您愉快!!</p>
+    </div>
+
+    <%if(blogs!=undefined&&blogs.length){%>
+    <div class="row">
+        <%-partial('listitem',blogs) %>
+    </div>
+    <%}else{%>
+    <div class="hero-unit">您当前还没有发表博客哦，快来发表第一篇博客吧！</div>
+    <%}%>
+
+</div> <!-- /container -->
